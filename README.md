@@ -8,3 +8,4 @@ Collection of Python programs
 ### GUI
 1. Paint Application (paint_app.py)
 2. Simple Text Editor (text_editor.py)
+3. Temperature Unit Converter (temp_unit_conv.py)
