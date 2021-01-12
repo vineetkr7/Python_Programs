@@ -10,3 +10,8 @@ Collection of Python programs
 2. Simple Text Editor (text_editor.py)
 3. Temperature Unit Converter (temp_unit_conv.py)
 4. Password Generator (password_generator.py)
+
+### Patterns
+1. Triangle (triangle_patterns.py)
+2. Number Triangle (num_triangle_patterns.py)
+3. Diamond (diamond_pattern.py)
