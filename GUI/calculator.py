@@ -115,11 +115,11 @@ def equals():
     textbox.insert(1.0, res)
     
     if len(input_list) == 1:
-        operation.config(text=input_list[-1])
-	elif len(input_list) == 2:
-        operation.config(text=''.join(str(s) for s in input_list))
-	elif len(input_list) >= 3:
-        operation.config(text=''.join(str(s) for s in input_list[-3:]))
+	operation.config(text=input_list[-1])
+    elif len(input_list) == 2:
+	operation.config(text=''.join(str(s) for s in input_list))
+    elif len(input_list) >= 3:
+	operation.config(text=''.join(str(s) for s in input_list[-3:]))
 
 # label for the recent operation
 operation = Label(root, text='0')
