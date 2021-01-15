@@ -48,11 +48,15 @@ def digit_click(digit):
 # square root
 def square_root():
     input_check()
-    textbox.delete(1.0, END)
-    res = math.sqrt(input_list[-1])
-    if str(res)[-2:] == '.0':
-        res = int(res)
-    textbox.insert(1.0, res)
+    if '-' not in str(input_list[-1]):
+        textbox.delete(1.0, END)
+        res = math.sqrt(input_list[-1])
+        if str(res)[-2:] == '.0':
+            res = int(res)
+        operation.config(text='√'+str(input_list[-1]))
+        textbox.insert(1.0, res)
+    else:
+        pass
 
 # dot operator
 def dot():
@@ -109,7 +113,18 @@ def equals():
     if str(res)[-2:] == '.0':
         res = int(res)
     textbox.insert(1.0, res)
+    
+    if len(input_list) == 1:
+        operation.config(text=input_list[-1])
+	elif len(input_list) == 2:
+        operation.config(text=''.join(str(s) for s in input_list))
+	elif len(input_list) >= 3:
+        operation.config(text=''.join(str(s) for s in input_list[-3:]))
 
+# label for the recent operation
+operation = Label(root, text='0')
+operation.place(x=40, y=0)
+    
 # textbox for entering numbers
 textbox = Text(root, height=1, width=25, font=('Calibri', 18), spacing1=5, spacing3=5, bg='#ffffe6')  # spacing1/spacing3 is for upper/lower spacing
 textbox.pack(padx=20, pady=20)
